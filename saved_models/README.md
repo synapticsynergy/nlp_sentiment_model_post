@@ -25,7 +25,7 @@ The folder structure should look like this:
 If the model was saved in the correct format depicted above, then you should be able to run the folling to create a local REST API for model inference:
 
 ```
-docker-compose up tf_serving
+docker-compose up sentiment_tf_serving
 ```
 
 It will take a minute to load, but once you see an output like this, the REST API is exposed and ready to test:
