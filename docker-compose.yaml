@@ -1,0 +1,19 @@
+version: '3.7'
+services:
+  api:
+    build: .
+    environment:
+      MODEL_BASE_URL: "sentiment_tf_serving:8501"
+    ports:
+      - "8000:8000"
+    volumes:
+      - "./:/app"
+  sentiment_tf_serving:
+    image: tensorflow/serving:2.2.0
+    volumes:
+      - "./saved_models/sentiment_model:/models/sentiment_model"
+    environment:
+      MODEL_NAME: "sentiment_model"
+    ports:
+      - "8501:8501"
+      - "8500:8500"
