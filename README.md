@@ -1,6 +1,5 @@
-# blogging_template
-A blogging template to make it faster to share project code for blog posts
-
+# nlp_sentiment_model_post
+Train a basic NLP sentiment model & serve predictions using Tensorflow Serving
 
 ## Table of Contents
 
