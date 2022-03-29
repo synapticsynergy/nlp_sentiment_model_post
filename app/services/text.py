@@ -8,5 +8,5 @@ def get_sentiment_predictions(texts: list):
     data = {"inputs": texts}
     resp = requests.post(f"http://{MODEL_BASE_URL}/v1/models/sentiment_model:predict", json=data)
     resp.raise_for_status()
-    embeddings = resp.json()["outputs"]
-    return embeddings
+    predictions = resp.json()["outputs"]
+    return predictions
