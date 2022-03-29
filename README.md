@@ -60,7 +60,7 @@ Once that runs, you can use the api by going to the following endpoints:
 1. Main Api: `http://localhost:8000/`
 1. Api Docs (Auto Generated from FastAPI): `http://localhost:8000/docs`
 1. Tensorflow Serving: `http://localhost:8501/v1/models/sentiment_model/metadata`
-1. Main Api endpoint returning model inference: `http://localhost:8000/text/`
+1. Main Api endpoint returning model inference: `http://localhost:8000/text/sentiment/example`
 
 ## Testing
 
