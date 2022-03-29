@@ -13,7 +13,7 @@ Train a basic NLP sentiment model & serve predictions using Tensorflow Serving
 
 ## Usage
 
->The purpose of this template is to quickly create projects for devs to experiment with code from my blog posts
+>Serve a custom trained NLP sentiment model using FastAPI & Tensorflow Serving
 
 ## Requirements
 
