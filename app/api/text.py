@@ -11,7 +11,7 @@ router = APIRouter()
 async def get_text_example():
     inputs = [
         "I loved it so much I could cry tears of joy",
-        "It was okay.",
+        "It was roughly what I expected",
         "It was the worst movie I have ever seen. Huge waste of time",
     ]
     return {"inputs": inputs, "results": get_sentiment_predictions(inputs)}

@@ -11,30 +11,30 @@ client = TestClient(app)
 
 def test_get_example():
     with mock.patch("requests.post") as mock_requests:
-        mock_requests.return_value.json.return_value = {"outputs": [1, 0.5, 0.0001]}
+        mock_requests.return_value.json.return_value = {"outputs": [0.999997854, 0.435923845, 0.00120159087]}
         resp = client.get("/text/sentiment/example")
         assert resp.json() == {
             "inputs": [
                 "I loved it so much I could cry tears of joy",
-                "It was okay.",
+                "It was roughly what I expected",
                 "It was the worst movie I have ever seen. Huge waste of time",
             ],
-            "results": [1, 0.5, 0.0001],
+            "results": [0.999997854, 0.435923845, 0.00120159087],
         }
 
 
 def test_predict_sentiment():
     with mock.patch("requests.post") as mock_requests:
-        mock_requests.return_value.json.return_value = {"outputs": [0.5]}
+        mock_requests.return_value.json.return_value = {"outputs": [0.723295271]}
         resp = client.post(
             "/text/sentiment/predict",
             json=TextRequest(
-                texts=["I'm feeling sentimental, please tell me approximately how sentimental."]
+                texts=["I'm feeling sentimental, please tell me approximately how sentimental"]
             ).dict(),
         )
         assert resp.json() == {
             "inputs": [
-                "I'm feeling sentimental, please tell me approximately how sentimental.",
+                "I'm feeling sentimental, please tell me approximately how sentimental",
             ],
-            "results": [0.5],
+            "results": [0.723295271],
         }
